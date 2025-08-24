@@ -1,0 +1,19 @@
+# Clone and setup
+git clone https://github.com/your-username/instagram-ai-platform.git
+cd instagram-ai-platform
+
+# Set up environment
+cp .env.example .env
+# Edit .env with your actual credentials
+
+# Build and run
+docker-compose up -d --build
+
+# View logs
+docker-compose logs -f api
+
+# Scale if needed
+docker-compose up -d --scale api=3
+
+# Run tests (if available)
+docker-compose exec api python -m pytest tests/
